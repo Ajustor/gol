@@ -7,7 +7,7 @@ const wait = async (ms: number) =>
 ;(async () => {
   const terminal = new Terminal()
   terminal.clear()
-  let lifes: number[][] = createLifes(49, 103)
+  let lifes: number[][] = createLifes(terminal.height - 1, terminal.width / 2)
   let paused = false
   let time = 1000
   let generation = 0
@@ -42,6 +42,7 @@ const wait = async (ms: number) =>
       await wait(1000)
       continue
     }
+    terminal.clear()
 
     lifes = nextGeneration(lifes)
     await wait(time)
