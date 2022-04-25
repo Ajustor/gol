@@ -22,6 +22,7 @@ const wait = async (ms: number) =>
   terminal.in.on('keypress', (chunk, key) => {
     if (key.name === 'space') {
       paused = !paused
+      terminal.clear()
     }
     if (key.name === 'up') {
       time += 100
@@ -35,6 +36,7 @@ const wait = async (ms: number) =>
       0,
       0
     )
+    terminal.bitmap(0, 1, lifes as unknown as boolean[][])
   })
 
   while (true) {
@@ -42,7 +44,6 @@ const wait = async (ms: number) =>
       await wait(1000)
       continue
     }
-    terminal.clear()
 
     lifes = nextGeneration(lifes)
     await wait(time)
