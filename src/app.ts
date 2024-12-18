@@ -13,7 +13,7 @@ let generation = 0
 terminal.bitmap(0, 1, lifes as unknown as boolean[][])
 
 terminal.write(
-  `Speed: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`,
+  `Delay between generation: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`,
   0,
   0
 )
@@ -31,7 +31,7 @@ terminal.in.on('keypress', (_, key) => {
   }
 
   terminal.write(
-    `Speed: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`,
+    `Delay between generation: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`,
     0,
     0
   )
@@ -49,7 +49,7 @@ while (true) {
   terminal.bitmap(0, 1, lifes as unknown as boolean[][])
   generation++
   terminal.write(
-    `Speed: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`,
+    `Delay between generation: ${time} Generation: ${generation} ${paused ? 'Paused' : ''}`.padEnd(terminal.width, ' '),
     0,
     0
   )

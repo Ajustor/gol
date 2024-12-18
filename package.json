@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
-    "dev": "ts-node src/app.ts",
+    "dev": "bun run src/app.ts",
     "build": "rm -rf dist && tsc",
     "start": "node dist/app.js"
   },
